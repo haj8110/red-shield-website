@@ -24,3 +24,83 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in {
+  animation: fade-in 1s ease both;
+}
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-up {
+  animation: slide-up 0.8s cubic-bezier(0.4,0,0.2,1) both;
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 0 0 #FF3C3C33; }
+  50% { box-shadow: 0 0 32px 8px #FF3C3C55; }
+  100% { box-shadow: 0 0 0 0 #FF3C3C33; }
+}
+.animate-glow {
+  animation: glow 1.2s ease-in-out infinite;
+}
+
+/* Neumorphism Shadows */
+.shadow-neumorph {
+  box-shadow: 8px 8px 24px #e0e0e0, -8px -8px 24px #ffffff;
+}
+.shadow-neumorph-inset {
+  box-shadow: inset 8px 8px 24px #e0e0e0, inset -8px -8px 24px #ffffff;
+}
+.shadow-neumorph-btn {
+  box-shadow: 4px 4px 12px #e0e0e0, -4px -4px 12px #ffffff;
+}
+.shadow-neumorph-btn-hover {
+  box-shadow: 2px 2px 6px #e0e0e0, -2px -2px 6px #ffffff;
+}
+
+/* Glassmorphism Utility */
+.glassmorph {
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  box-shadow: 0 8px 32px 0 rgba(30,30,60,0.08);
+}
+
+/* Glassmorphism Card Utility for Service Cards */
+.glass-card {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border-radius: 1.25rem;
+  border: 1.5px solid rgba(255, 60, 60, 0.13);
+  box-shadow: 0 6px 32px 0 rgba(30,30,60,0.10);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.glass-card:hover {
+  box-shadow: 0 12px 40px 0 rgba(206,32,41,0.18), 0 2px 8px 0 rgba(255,60,60,0.10);
+  transform: translateY(-8px) scale(1.03);
+}
+
+/* Gradient Border Utility */
+.gradient-border {
+  border: 2px solid transparent;
+  background-image: linear-gradient(white, white), linear-gradient(90deg, #FF3C3C 0%, #CE2029 50%, #FF7A3C 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* Floating Icon Animation */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+.floating-icon {
+  animation: float 2.2s ease-in-out infinite;
+}
