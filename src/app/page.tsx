@@ -1,6 +1,6 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { Shield, Flame, Zap, Wrench, ArrowRight, CheckCircle } from 'lucide-react';
+import { Shield, Flame, Zap, Wrench, ArrowRight, CheckCircle, Play, Star, Users, Award } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -41,48 +41,214 @@ export default function Home() {
     'Warranty Coverage'
   ];
 
+  const stats = [
+    { number: '500+', label: 'Projects Completed', icon: Award },
+    { number: '50+', label: 'Expert Technicians', icon: Users },
+    { number: '24/7', label: 'Emergency Support', icon: Shield },
+    { number: '100%', label: 'Client Satisfaction', icon: Star }
+  ];
+
   return (
     <div className="min-h-screen">
       <Navigation />
-      {/* Hero Section with Neumorphism Style */}
-      <section className="relative w-full min-h-screen flex items-center justify-center bg-[#f7f7f7] overflow-hidden">
-        <div className="relative z-10 flex flex-col md:flex-row items-center justify-center w-full h-full px-4 gap-8 md:gap-16">
-          {/* Glassmorphic Text/CTA Card (left, larger) */}
-          <div className="flex-[1.5] max-w-2xl glassmorph rounded-2xl p-12 md:p-16 text-center md:text-left mx-auto md:mx-0 border border-white/30 shadow-2xl animate-fade-in" style={{backdropFilter: 'blur(18px) saturate(160%)', WebkitBackdropFilter: 'blur(18px) saturate(160%)'}}>
-            <h1 className="text-3xl md:text-5xl font-extrabold text-[#CE2029] mb-6 tracking-tight drop-shadow-sm">
-              Your Partner in <span className="text-[#CE2029]">Fire Safety Solutions</span>
-            </h1>
-            <p className="text-lg md:text-xl text-gray-700 mb-8 font-medium">
-              Innovative Fire Safety Solutions for a Safer Tomorrow
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <Link 
-                href="/services"
-                className="relative px-8 py-4 rounded-lg font-semibold text-white bg-gradient-to-r from-[#FF3C3C] via-[#CE2029] to-[#FF7A3C] shadow-lg border-none transition-all duration-200 flex items-center justify-center space-x-2 overflow-hidden group"
-              >
-                <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none animate-glow" style={{boxShadow: '0 0 32px 8px #FF3C3C55'}}></span>
-                <Flame className="h-5 w-5 mr-2 text-white drop-shadow" />
-                <span>Explore Our Services</span>
-                <ArrowRight className="h-5 w-5 ml-2 text-white drop-shadow" />
-              </Link>
-              <Link 
-                href="/contact"
-                className="px-8 py-4 rounded-lg font-semibold text-[#CE2029] bg-white/70 border border-[#CE2029]/30 shadow-md hover:bg-[#FFF0F0] hover:text-[#B81B22] transition-all duration-200 backdrop-blur-md"
-              >
-                Contact Us
-              </Link>
+      
+      {/* Enhanced Hero Section */}
+      <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Mixed Background - Combining All Elements */}
+        <div className="absolute inset-0 bg-gradient-to-br from-red-50 via-orange-50 to-red-100">
+          
+          {/* Base Geometric Pattern */}
+          <div className="absolute inset-0 opacity-15">
+            <div className="absolute top-0 left-0 w-full h-full">
+              {/* Diagonal Lines */}
+              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-red-500/8 to-transparent transform rotate-12"></div>
+              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-orange-500/8 to-transparent transform -rotate-12"></div>
+              
+              {/* Geometric Shapes */}
+              <div className="absolute top-20 left-10 w-32 h-32 border-2 border-red-300/25 rounded-full animate-pulse"></div>
+              <div className="absolute top-40 right-20 w-24 h-24 bg-orange-300/15 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+              <div className="absolute bottom-40 left-20 w-20 h-20 border-2 border-red-400/25 transform rotate-45 animate-pulse" style={{ animationDelay: '2s' }}></div>
+              <div className="absolute bottom-20 right-10 w-28 h-28 bg-orange-400/15 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+              
+              {/* Additional Geometric Elements */}
+              <div className="absolute top-1/4 left-1/4 w-16 h-16 border border-red-400/20 transform rotate-45 animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+              <div className="absolute top-3/4 right-1/4 w-12 h-12 bg-orange-300/10 rounded-full animate-pulse" style={{ animationDelay: '0.8s' }}></div>
+              <div className="absolute bottom-1/3 left-1/3 w-20 h-20 border-2 border-red-300/20 rounded-full animate-pulse" style={{ animationDelay: '2.5s' }}></div>
+              
+              {/* Grid Pattern */}
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(206,32,41,0.08)_1px,transparent_0)] bg-[length:25px_25px]"></div>
             </div>
           </div>
-          {/* Neumorphic SVG Illustration (right) */}
+          
+          {/* Particle System */}
+          <div className="absolute inset-0">
+            {[...Array(15)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute w-1 h-1 bg-red-400/20 rounded-full animate-pulse"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 3}s`,
+                  animationDuration: `${2 + Math.random() * 2}s`
+                }}
+              ></div>
+            ))}
+            {[...Array(10)].map((_, i) => (
+              <div
+                key={`orange-${i}`}
+                className="absolute w-1.5 h-1.5 bg-orange-400/20 rounded-full animate-pulse"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 3}s`,
+                  animationDuration: `${1.5 + Math.random() * 2}s`
+                }}
+              ></div>
+            ))}
+          </div>
+          
+          {/* Wave Effect at Bottom */}
+          <svg className="absolute bottom-0 left-0 w-full h-24 text-red-200/20" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".3" fill="currentColor"></path>
+            <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".2" fill="currentColor"></path>
+            <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="currentColor"></path>
+          </svg>
+          
+          {/* Gradient Overlays for Depth */}
+          <div className="absolute inset-0 bg-gradient-to-r from-red-500/3 via-transparent to-orange-500/3"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-red-500/2 to-orange-500/2"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-transparent via-red-500/1 to-transparent"></div>
+          
+          {/* Animated Light Rays */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-red-400/10 to-transparent animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+            <div className="absolute top-0 left-3/4 w-px h-full bg-gradient-to-b from-transparent via-orange-400/10 to-transparent animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+            <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-red-300/8 to-transparent animate-pulse" style={{ animationDelay: '2.5s' }}></div>
+          </div>
+        </div>
+
+        {/* Floating Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-20 left-10 w-20 h-20 bg-red-500/10 rounded-full animate-bounce" style={{ animationDelay: '0s', animationDuration: '3s' }}></div>
+          <div className="absolute top-40 right-20 w-16 h-16 bg-orange-500/10 rounded-full animate-bounce" style={{ animationDelay: '1s', animationDuration: '4s' }}></div>
+          <div className="absolute bottom-40 left-20 w-12 h-12 bg-red-600/10 rounded-full animate-bounce" style={{ animationDelay: '2s', animationDuration: '3.5s' }}></div>
+          <div className="absolute bottom-20 right-10 w-24 h-24 bg-orange-600/10 rounded-full animate-bounce" style={{ animationDelay: '0.5s', animationDuration: '4.5s' }}></div>
+          
+          {/* Additional Floating Elements */}
+          <div className="absolute top-1/3 left-1/2 w-8 h-8 bg-red-400/15 rounded-full animate-bounce" style={{ animationDelay: '1.2s', animationDuration: '3.2s' }}></div>
+          <div className="absolute bottom-1/3 right-1/3 w-10 h-10 bg-orange-400/15 rounded-full animate-bounce" style={{ animationDelay: '0.8s', animationDuration: '4.8s' }}></div>
+        </div>
+
+        <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center w-full h-full px-4 gap-8 lg:gap-16 max-w-7xl mx-auto">
+          
+          {/* Left Content */}
+          <div className="flex-1 max-w-2xl text-center lg:text-left animate-fade-in">
+            {/* Badge */}
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-red-500/10 to-orange-500/10 border border-red-200 text-red-700 font-semibold text-sm mb-6 animate-slide-down">
+              <Shield className="h-4 w-4 mr-2" />
+              Leading Fire Safety Solutions
+            </div>
+
+            {/* Main Heading */}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-red-700 to-orange-600">
+                Your Safety
+              </span>
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 via-red-600 to-red-700">
+                Our Priority
+              </span>
+            </h1>
+
+            {/* Subtitle */}
+            <p className="text-xl md:text-2xl text-gray-700 mb-8 font-medium leading-relaxed">
+              Advanced fire safety solutions that protect lives, property, and peace of mind. 
+              <span className="text-red-600 font-semibold"> Trusted by 500+ clients</span> across the region.
+            </p>
+
+            {/* Stats Row */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center animate-fade-in" style={{ animationDelay: `${0.3 + index * 0.1}s`, animationFillMode: 'both' }}>
+                  <div className="text-2xl md:text-3xl font-bold text-red-600 mb-1">{stat.number}</div>
+                  <div className="text-xs md:text-sm text-gray-600 font-medium">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+              <Link 
+                href="/services"
+                className="group relative px-8 py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-red-600 via-red-700 to-orange-600 shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center space-x-2 overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <Flame className="h-5 w-5 mr-2 text-white relative z-10 group-hover:scale-110 transition-transform" />
+                <span className="relative z-10">Explore Services</span>
+                <ArrowRight className="h-5 w-5 ml-2 text-white relative z-10 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              
+              <Link 
+                href="/contact"
+                className="group px-8 py-4 rounded-xl font-semibold text-red-600 bg-white/90 border-2 border-red-200 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2 backdrop-blur-sm hover:bg-white"
+              >
+                <span>Get Free Quote</span>
+                <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="flex items-center justify-center lg:justify-start space-x-6 text-sm text-gray-600">
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="h-4 w-4 text-green-500" />
+                <span>Certified & Compliant</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="h-4 w-4 text-green-500" />
+                <span>24/7 Support</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Content - Hero Image */}
           <div className="flex-1 flex justify-center items-center relative">
-            {/* Neumorphic platform behind SVG */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-56 md:w-[28rem] md:h-72 rounded-3xl bg-[#f7f7f7] shadow-neumorph-inset" style={{ zIndex: 1 }} />
-            <img
-              src="/fire-prevention-animate.svg"
-              alt="Fire Prevention Illustration"
-              className="w-48 h-48 md:w-96 md:h-96 object-contain relative z-10"
-              style={{ maxWidth: '100%', height: 'auto' }}
-            />
+            {/* Main Hero Image */}
+            <div className="relative">
+              {/* Glowing Background */}
+              <div className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-orange-500/20 rounded-3xl blur-3xl animate-pulse"></div>
+              
+              {/* Glassmorphic Container */}
+              <div className="relative glass-card p-8 rounded-3xl shadow-2xl border border-white/30 backdrop-blur-xl">
+                <div className="relative z-10">
+                  <img
+                    src="/fire-prevention-animate.svg"
+                    alt="Fire Safety Solutions"
+                    className="w-64 h-64 md:w-80 md:h-80 object-contain animate-float"
+                    style={{ maxWidth: '100%', height: 'auto' }}
+                  />
+                </div>
+                
+                {/* Floating Elements Around Image */}
+                <div className="absolute -top-4 -right-4 w-16 h-16 bg-red-500/20 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }}></div>
+                <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-orange-500/20 rounded-full animate-bounce" style={{ animationDelay: '1s' }}></div>
+                <div className="absolute top-1/2 -left-8 w-8 h-8 bg-red-600/20 rounded-full animate-bounce" style={{ animationDelay: '1.5s' }}></div>
+              </div>
+            </div>
+
+            {/* Video Play Button Overlay */}
+            <div className="absolute bottom-8 right-8">
+              <button className="group w-16 h-16 bg-white/90 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center backdrop-blur-sm hover:scale-110">
+                <Play className="h-6 w-6 text-red-600 ml-1 group-hover:text-red-700 transition-colors" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-red-600 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-red-600 rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>
