@@ -253,22 +253,121 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Image Section */}
-      <section className="py-16 bg-white animate-fade-in" style={{ animationDelay: '0.5s', animationFillMode: 'both' }}>
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
-          <div className="flex-1 flex justify-center">
-            <Image
-              src="https://picsum.photos/400/300?random=2"
-              alt="Fire safety illustration"
-              width={400}
-              height={300}
-              className="rounded-xl shadow-2xl hover:scale-105 transition-transform duration-500 object-cover"
-            />
-          </div>
-          <div className="flex-1 text-center md:text-left">
-            <div className="glass-card p-8">
-              <h3 className="text-2xl font-bold text-[#CE2029] mb-4">Protecting What Matters Most</h3>
-              <p className="text-lg text-gray-700 mb-2">Our solutions are designed to safeguard your people, property, and peace of mind. We combine technology and expertise to deliver the highest standards in fire safety.</p>
+      {/* Image Section with Real Fire Safety Images */}
+      <section className="py-20 bg-white animate-fade-in" style={{ animationDelay: '0.5s', animationFillMode: 'both' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            {/* Left Side - Images */}
+            <div className="space-y-8">
+              {/* Main Image */}
+              <div className="relative group">
+                <Image
+                  src="/Home/engineers-are-checking-fire-extinguishers.jpg"
+                  alt="Professional engineers checking fire extinguishers"
+                  width={600}
+                  height={400}
+                  className="rounded-2xl shadow-2xl group-hover:scale-105 transition-all duration-500 object-cover w-full"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent rounded-2xl group-hover:from-black/40 transition-all duration-500"></div>
+                <div className="absolute bottom-4 left-4">
+                  <div className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
+                    <p className="text-sm font-semibold text-gray-800">Professional Inspection</p>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Secondary Image */}
+              <div className="relative group">
+                <Image
+                  src="/Home/engineers-pull-out-safety-pin-fire-extinguishers.jpg"
+                  alt="Engineers performing safety procedures on fire extinguishers"
+                  width={600}
+                  height={300}
+                  className="rounded-2xl shadow-xl group-hover:scale-105 transition-all duration-500 object-cover w-full"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent rounded-2xl group-hover:from-black/40 transition-all duration-500"></div>
+                <div className="absolute bottom-4 left-4">
+                  <div className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg">
+                    <p className="text-sm font-semibold text-gray-800">Safety Procedures</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Side - Enhanced Content */}
+            <div className="space-y-8">
+              <div className="glass-card p-8 rounded-2xl shadow-xl">
+                <div className="flex items-center space-x-3 mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-orange-500 rounded-full flex items-center justify-center">
+                    <Shield className="h-6 w-6 text-white" />
+                  </div>
+                  <h3 className="text-3xl font-bold text-[#CE2029]">Protecting What Matters Most</h3>
+                </div>
+                
+                <p className="text-lg text-gray-700 mb-8 leading-relaxed">
+                  Our expert engineers ensure your fire safety systems are always in perfect condition. With meticulous attention to detail and industry-leading expertise, we provide comprehensive fire safety solutions that protect lives and property.
+                </p>
+                
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <CheckCircle className="h-4 w-4 text-green-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1">Professional Installation</h4>
+                      <p className="text-sm text-gray-600">Certified technicians with years of experience</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-3">
+                    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <CheckCircle className="h-4 w-4 text-green-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1">Regular Maintenance</h4>
+                      <p className="text-sm text-gray-600">Scheduled inspections and preventive care</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-3">
+                    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <CheckCircle className="h-4 w-4 text-green-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1">24/7 Emergency Support</h4>
+                      <p className="text-sm text-gray-600">Round-the-clock emergency response</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-3">
+                    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <CheckCircle className="h-4 w-4 text-green-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1">Compliance Guaranteed</h4>
+                      <p className="text-sm text-gray-600">Meet all safety standards and regulations</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link 
+                    href="/services"
+                    className="bg-gradient-to-r from-red-600 to-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 text-center"
+                  >
+                    Explore Services
+                  </Link>
+                  <Link 
+                    href="/contact"
+                    className="border-2 border-red-600 text-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-red-600 hover:text-white transition-all duration-300 text-center"
+                  >
+                    Get Quote
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
