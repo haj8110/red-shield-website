@@ -234,7 +234,7 @@ export default function Contact() {
             Ready to Get Started?
           </h2>
           <p className="text-xl text-red-100 mb-8 max-w-2xl mx-auto">
-            Don't wait until it's too late. Contact Red Shield Engineering today for reliable fire safety solutions.
+            Don&apos;t wait until it&apos;s too late. Contact Red Shield Engineering today for reliable fire safety solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
