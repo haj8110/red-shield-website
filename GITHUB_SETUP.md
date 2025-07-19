@@ -1,0 +1,99 @@
+# 🔧 GitHub Repository Setup Guide
+
+## ❌ Current Issue
+The repository `https://github.com/haj8110/red-shield-website` doesn't exist yet.
+
+## ✅ Solution Steps
+
+### Step 1: Create GitHub Repository
+
+1. **Go to GitHub**: [github.com](https://github.com)
+2. **Sign in** to your account (haj8110)
+3. **Click "New repository"** (green button)
+4. **Repository settings**:
+   - **Repository name**: `red-shield-website`
+   - **Description**: `Red Shield Fire Safety Website`
+   - **Visibility**: `Public` (required for free deployment)
+   - **DO NOT** check "Add a README file"
+   - **DO NOT** check "Add .gitignore"
+   - **DO NOT** check "Choose a license"
+5. **Click "Create repository"**
+
+### Step 2: Connect Your Local Repository
+
+After creating the repository, GitHub will show you commands. Use these:
+
+```bash
+# Add the new remote (replace YOUR_USERNAME with haj8110)
+git remote add origin https://github.com/haj8110/red-shield-website.git
+
+# Push your code
+git add .
+git commit -m "Initial commit"
+git push -u origin main
+```
+
+### Step 3: Verify Connection
+
+```bash
+git remote -v
+```
+
+Should show:
+```
+origin  https://github.com/haj8110/red-shield-website.git (fetch)
+origin  https://github.com/haj8110/red-shield-website.git (push)
+```
+
+### Step 4: Deploy to Render
+
+1. **Go to Render**: [render.com](https://render.com)
+2. **Sign up/Login** with GitHub
+3. **Click "New" → "Web Service"**
+4. **Connect GitHub repository**: Select `haj8110/red-shield-website`
+5. **Configure service**:
+   - **Name**: `red-shield-website`
+   - **Environment**: `Node`
+   - **Build Command**: `npm install && npm run build`
+   - **Start Command**: `npm start`
+   - **Plan**: `Free`
+6. **Click "Create Web Service"**
+
+## 🎯 Alternative: Quick Setup Script
+
+Run this script to automate the process:
+
+```bash
+# Create repository on GitHub (you'll need to do this manually first)
+# Then run these commands:
+
+git remote add origin https://github.com/haj8110/red-shield-website.git
+git add .
+git commit -m "Initial commit - Red Shield Website"
+git push -u origin main
+```
+
+## ✅ Verification
+
+After setup, verify:
+- [ ] Repository exists at: https://github.com/haj8110/red-shield-website
+- [ ] Code is pushed to GitHub
+- [ ] Render can access the repository
+- [ ] Deployment starts automatically
+
+## 🆘 If You Still Get Errors
+
+1. **Check repository URL**: Make sure it's exactly `https://github.com/haj8110/red-shield-website`
+2. **Verify repository is public**: Private repos require paid plans
+3. **Check GitHub permissions**: Render needs access to your repositories
+4. **Try Vercel instead**: [vercel.com](https://vercel.com) - often easier setup
+
+## 🚀 Success!
+
+Once the repository is created and connected, Render will automatically:
+- ✅ Detect your `render.yaml` configuration
+- ✅ Build your Next.js application
+- ✅ Deploy to a live URL
+- ✅ Set up automatic deployments
+
+Your website will be live in 5-10 minutes! 🎉 
