@@ -8,26 +8,26 @@ export default function Home() {
   const services = [
     {
       icon: Flame,
-      title: 'Fire Fighting Systems',
-      description: 'Comprehensive fire detection and suppression systems for all environments.',
+      title: 'Fire Protection Engineering',
+      description: 'Comprehensive fire protection system engineering and design solutions.',
       color: 'text-red-500'
     },
     {
       icon: Shield,
-      title: 'Gas Suppression Systems',
-      description: 'Advanced gas-based fire suppression for sensitive equipment areas.',
+      title: 'Estimation & Cost Analysis',
+      description: 'Detailed cost analysis and material take-offs for fire protection systems.',
       color: 'text-blue-500'
     },
     {
       icon: Zap,
-      title: 'Fire Fighting Pumps',
-      description: 'High-performance pumps for reliable water-based fire suppression.',
+      title: 'System Design & Architecture',
+      description: 'Advanced fire protection system design and architectural planning.',
       color: 'text-green-500'
     },
     {
       icon: Wrench,
-      title: 'Low Current Systems',
-      description: 'Specialized low-voltage systems for enhanced safety and control.',
+      title: 'Technical Drafting & CAD',
+      description: 'Professional technical drawings and CAD documentation for fire protection systems.',
       color: 'text-purple-500'
     }
   ];
@@ -42,10 +42,10 @@ export default function Home() {
   ];
 
   const stats = [
-    { number: '500+', label: 'Projects Completed', icon: Award },
-    { number: '50+', label: 'Expert Technicians', icon: Users },
-    { number: '24/7', label: 'Emergency Support', icon: Shield },
-    { number: '100%', label: 'Client Satisfaction', icon: Star }
+    { number: 'NFPA', label: 'Certified Engineers', icon: Award },
+    { number: 'GCC', label: 'Market Coverage', icon: Users },
+    { number: '24/7', label: 'Technical Support', icon: Shield },
+    { number: '100%', label: 'Code Compliance', icon: Star }
   ];
 
   return (
@@ -53,7 +53,7 @@ export default function Home() {
       <Navigation />
       
       {/* Enhanced Hero Section */}
-      <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative w-full min-h-[calc(100vh-4rem)] sm:min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 lg:pt-24">
         {/* Mixed Background - Combining All Elements */}
         <div className="absolute inset-0 bg-gradient-to-br from-red-50 via-orange-50 to-red-100">
           
@@ -140,14 +140,14 @@ export default function Home() {
           <div className="absolute bottom-1/3 right-1/3 w-10 h-10 bg-orange-400/15 rounded-full animate-bounce" style={{ animationDelay: '0.8s', animationDuration: '4.8s' }}></div>
         </div>
 
-        <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center w-full h-full px-4 sm:px-6 lg:px-8 gap-8 lg:gap-16 mx-auto max-w-7xl">
+        <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center w-full h-full px-4 sm:px-6 lg:px-8 gap-8 lg:gap-16 mx-auto max-w-7xl py-8 sm:py-12 lg:py-16">
           
           {/* Left Content */}
           <div className="flex-1 max-w-2xl text-center lg:text-left" data-aos="fade-right" data-aos-duration="1000">
             {/* Badge */}
             <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-gradient-to-r from-red-500/10 to-orange-500/10 border border-red-200 text-red-700 font-semibold text-xs sm:text-sm mb-4 sm:mb-6" data-aos="fade-down" data-aos-delay="200">
               <Shield className="h-3 w-3 sm:h-4 sm:w-4 mr-2" />
-              Leading Fire Safety Solutions
+              Leading Fire Protection Engineering
             </div>
 
             {/* Main Heading */}
@@ -163,8 +163,8 @@ export default function Home() {
 
             {/* Subtitle */}
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 mb-6 sm:mb-8 font-medium leading-relaxed" data-aos="fade-up" data-aos-delay="600">
-              Advanced fire safety solutions that protect lives, property, and peace of mind. 
-              <span className="text-red-600 font-semibold"> Trusted by 500+ clients</span> across the region.
+              Advanced fire protection engineering solutions that protect lives, property, and peace of mind. 
+              <span className="text-red-600 font-semibold"> Trusted by System Integrators, MEP Contractors, and Consultants</span> across the GCC and international markets.
             </p>
 
             {/* Stats Row */}
@@ -223,7 +223,7 @@ export default function Home() {
                 <div className="relative z-10">
                   <Image
                     src="/fire-prevention-animate.svg"
-                    alt="Fire Safety Solutions"
+                    alt="Fire Protection Engineering Solutions"
                     width={320}
                     height={320}
                     className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 object-contain animate-float"
@@ -255,7 +255,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Image Section with Real Fire Safety Images */}
+      {/* Image Section with Real Fire Protection Engineering Images */}
       <section className="py-12 sm:py-16 lg:py-20 bg-white image-section" data-aos="fade-up" data-aos-duration="1000">
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
@@ -310,7 +310,7 @@ export default function Home() {
                 </div>
                 
                 <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8 leading-relaxed">
-                  Our expert engineers ensure your fire safety systems are always in perfect condition. With meticulous attention to detail and industry-leading expertise, we provide comprehensive fire safety solutions that protect lives and property.
+                  Our expert engineers ensure your fire protection systems are always in perfect condition. With meticulous attention to detail and industry-leading expertise, we provide comprehensive fire protection engineering solutions that protect lives and property.
                 </p>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
@@ -383,7 +383,7 @@ export default function Home() {
               Our Comprehensive Services
             </h2>
             <p className="text-lg sm:text-xl text-gray-700 max-w-2xl mx-auto font-medium" data-aos="fade-up" data-aos-delay="400">
-              From fire detection to suppression systems, we provide complete fire safety solutions tailored for every environment.
+              From fire protection engineering to technical drafting, we provide complete fire protection solutions for System Integrators, MEP Contractors, and Consultants.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
@@ -435,7 +435,7 @@ export default function Home() {
                 Get Your Free Consultation
               </h3>
               <p className="text-sm sm:text-base text-gray-600 mb-6">
-                Contact us today for a comprehensive fire safety assessment of your facility.
+                Contact us today for a comprehensive fire protection engineering assessment of your facility.
               </p>
               <Link 
                 href="/contact"
@@ -455,7 +455,7 @@ export default function Home() {
             Ready to Protect What Matters Most?
           </h2>
           <p className="text-lg sm:text-xl text-red-100 mb-6 sm:mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="400">
-            Don&apos;t wait until it&apos;s too late. Contact Red Shield Engineering today for reliable fire safety solutions.
+            Don&apos;t wait until it&apos;s too late. Contact Red Shield Engineering today for reliable fire protection engineering solutions.
           </p>
           <Link 
             href="/contact"

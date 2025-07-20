@@ -18,16 +18,16 @@ export default function Contact() {
   };
 
   const contactInfo = [
-    { icon: MapPin, label: 'Address', value: '123 Fire Safety Ave, Dubai, UAE', color: 'text-red-500' },
-    { icon: Phone, label: 'Phone', value: '+971 4 123 4567', color: 'text-green-500' },
-    { icon: Mail, label: 'Email', value: 'info@redshield.com', color: 'text-blue-500' },
-    { icon: Clock, label: 'Working Hours', value: 'Mon-Fri: 8AM-6PM', color: 'text-purple-500' }
+    { icon: MapPin, label: 'Address', value: '12-1-17, Vinayagar Street, Surandai – 627859, Tenkasi District, Tamil Nadu, India.', color: 'text-red-500' },
+    { icon: Phone, label: 'Phone', value: '+91 8015019219', color: 'text-green-500' },
+    { icon: Mail, label: 'Email', value: 'sales@reshieldengineering.com', color: 'text-blue-500' },
+    { icon: Clock, label: 'Website', value: 'www.redshieldengineering.com', color: 'text-purple-500' }
   ];
 
   const features = [
-    { icon: Users, title: 'Expert Team', description: 'Certified professionals with years of experience' },
-    { icon: Award, title: 'Quality Guaranteed', description: 'All work meets international safety standards' },
-    { icon: Clock, title: '24/7 Support', description: 'Emergency response available round the clock' },
+    { icon: Users, title: 'NFPA Certified Engineers', description: 'Highly qualified engineers with deep industry knowledge' },
+    { icon: Award, title: 'Code Compliance', description: 'All designs meet NFPA standards and local fire codes' },
+    { icon: Clock, title: '24/7 Technical Support', description: 'Round-the-clock technical support and consultation' },
     { icon: Send, title: 'Quick Response', description: 'Get back to you within 2 hours' }
   ];
 
@@ -38,12 +38,12 @@ export default function Contact() {
       {/* Hero Section */}
       <section className="pt-16 bg-gradient-to-br from-red-50 to-orange-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="text-center animate-fade-in">
+          <div className="text-center animate-fade-in" data-aos="fade-up">
             <h1 className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FF3C3C] via-[#CE2029] to-[#FF7A3C] mb-6 drop-shadow-lg tracking-tight">
               Contact <span className="text-[#CE2029]">Us</span>
             </h1>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto font-medium">
-              Get in touch for fire safety consultations, quotes, or support
+              Get in touch for fire protection engineering consultations, quotes, or technical support
             </p>
           </div>
         </div>
@@ -52,7 +52,7 @@ export default function Contact() {
       {/* Contact Info Cards */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" data-aos="fade-up" data-aos-delay="200">
             {contactInfo.map((info, index) => (
               <div key={index} className="glass-card p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 animate-fade-in" style={{ animationDelay: `${0.1 + index * 0.1}s`, animationFillMode: 'both' }}>
                 <div className={`w-12 h-12 flex items-center justify-center rounded-full bg-gradient-to-br from-${info.color.split('-')[1]}-500/20 to-${info.color.split('-')[1]}-600/20 mb-4`}>
@@ -72,12 +72,12 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             
             {/* Contact Form */}
-            <div className="animate-fade-in" style={{ animationDelay: '0.3s', animationFillMode: 'both' }}>
+            <div className="animate-fade-in" style={{ animationDelay: '0.3s', animationFillMode: 'both' }} data-aos="fade-right">
               <div className="glass-card p-8 rounded-2xl shadow-xl">
                 <h2 className="text-3xl font-bold text-gray-900 mb-8">Send Us a Message</h2>
                 
                 {submitted ? (
-                  <div className="glass-card p-8 rounded-2xl text-center animate-fade-in">
+                  <div className="glass-card p-8 rounded-2xl text-center animate-fade-in" data-aos="fade-up">
                     <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-full bg-green-500/20">
                       <Send className="h-8 w-8 text-green-600" />
                     </div>
@@ -154,7 +154,7 @@ export default function Contact() {
                         required 
                         rows={5} 
                         className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent bg-white/80 backdrop-blur-sm transition-all duration-200 resize-none" 
-                        placeholder="Tell us about your fire safety needs..."
+                        placeholder="Tell us about your fire protection engineering needs..."
                       />
                     </div>
                     
@@ -171,11 +171,11 @@ export default function Contact() {
             </div>
 
             {/* Company Info & Map */}
-            <div className="space-y-8 animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
+            <div className="space-y-8 animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'both' }} data-aos="fade-left">
               
               {/* Features */}
               <div className="glass-card p-8 rounded-2xl shadow-xl">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Choose Red Shield?</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Why Choose Red Shield Engineering?</h3>
                 <div className="space-y-4">
                   {features.map((feature, index) => (
                     <div key={index} className="flex items-start space-x-4 animate-fade-in" style={{ animationDelay: `${0.5 + index * 0.1}s`, animationFillMode: 'both' }}>
@@ -196,7 +196,7 @@ export default function Contact() {
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Our Location</h3>
                 <div className="rounded-xl overflow-hidden shadow-lg">
                   <iframe 
-                    src="https://www.google.com/maps?q=Dubai,+UAE&output=embed" 
+                    src="https://www.google.com/maps?q=Surandai,+Tenkasi+District,+Tamil+Nadu,+India&output=embed" 
                     width="100%" 
                     height="250" 
                     className="border-0" 
@@ -212,7 +212,7 @@ export default function Contact() {
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Quick Chat</h3>
                 <p className="text-gray-600 mb-4">Need immediate assistance? Chat with us on WhatsApp!</p>
                 <a 
-                  href="https://wa.me/97141234567" 
+                  href="https://wa.me/918015019219" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="inline-flex items-center px-6 py-3 bg-green-500 text-white rounded-xl font-semibold hover:bg-green-600 shadow-lg hover:shadow-xl transition-all duration-300 group"
@@ -228,24 +228,24 @@ export default function Contact() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-red-600 via-red-700 to-red-800 animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
+      <section className="py-20 bg-gradient-to-br from-red-600 via-red-700 to-red-800 animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'both' }} data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 drop-shadow-xl">
             Ready to Get Started?
           </h2>
           <p className="text-xl text-red-100 mb-8 max-w-2xl mx-auto">
-            Don&apos;t wait until it&apos;s too late. Contact Red Shield Engineering today for reliable fire safety solutions.
+            Don&apos;t wait until it&apos;s too late. Contact Red Shield Engineering today for reliable fire protection engineering solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="tel:+97141234567"
+              href="tel:+918015019219"
               className="bg-white text-red-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center space-x-2 group"
             >
               <Phone className="h-5 w-5 group-hover:scale-110 transition-transform" />
               <span>Call Now</span>
             </a>
             <a 
-              href="mailto:info@redshield.com"
+              href="mailto:sales@reshieldengineering.com"
               className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-red-600 transition-all duration-300 backdrop-blur-sm flex items-center justify-center space-x-2 group"
             >
               <Mail className="h-5 w-5 group-hover:scale-110 transition-transform" />
