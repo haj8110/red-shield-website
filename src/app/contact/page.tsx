@@ -7,14 +7,78 @@ import { useState } from 'react';
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', company: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Telegram Bot Configuration
+  const TELEGRAM_BOT_TOKEN = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN || '8014120673:AAF5uixEY7rHNtFAMYMxzBpoxN3salvNPHQ';
+  const TELEGRAM_CHAT_ID = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID || '1643051382';
+
+  const sendTelegramMessage = async (formData: any) => {
+    try {
+      const message = `
+🚨 *NEW CONTACT FORM SUBMISSION*
+
+👤 *Name:* ${formData.name}
+📧 *Email:* ${formData.email}
+📱 *Phone:* ${formData.phone || 'Not provided'}
+🏢 *Company:* ${formData.company || 'Not provided'}
+
+💬 *Message:*
+${formData.message}
+
+⏰ *Submitted:* ${new Date().toLocaleString()}
+🌐 *Website:* Red Shield Engineering
+      `;
+
+      const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          chat_id: TELEGRAM_CHAT_ID,
+          text: message,
+          parse_mode: 'Markdown',
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send Telegram message');
+      }
+
+      return true;
+    } catch (error) {
+      console.error('Telegram notification error:', error);
+      return false;
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSending(true);
+
+    try {
+      // Send to Telegram for instant notification
+      const telegramSent = await sendTelegramMessage(form);
+      
+      if (telegramSent) {
+        console.log('✅ Telegram notification sent successfully');
+      } else {
+        console.log('⚠️ Telegram notification failed, but form submitted');
+      }
+
+      // Reset form and show success message
+      setForm({ name: '', email: '', phone: '', company: '', message: '' });
+      setSubmitted(true);
+    } catch (error) {
+      console.error('Form submission error:', error);
+    } finally {
+      setSending(false);
+    }
   };
 
   const contactInfo = [
@@ -82,7 +146,7 @@ export default function Contact() {
                       <Send className="h-8 w-8 text-green-600" />
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">Message Sent Successfully!</h3>
-                    <p className="text-gray-600 mb-6">Thank you for contacting us. We will get back to you within 2 hours.</p>
+                    <p className="text-gray-600 mb-6">Thank you for contacting us. We've received your message and sent an instant notification to our team. We will get back to you within 2 hours.</p>
                     <button 
                       onClick={() => setSubmitted(false)}
                       className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors"
@@ -160,10 +224,20 @@ export default function Contact() {
                     
                     <button 
                       type="submit" 
-                      className="w-full bg-gradient-to-r from-[#FF3C3C] via-[#CE2029] to-[#FF7A3C] text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300 flex items-center justify-center space-x-2 group"
+                      disabled={sending}
+                      className="w-full bg-gradient-to-r from-[#FF3C3C] via-[#CE2029] to-[#FF7A3C] text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300 flex items-center justify-center space-x-2 group disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      <Send className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                      <span>Send Message</span>
+                      {sending ? (
+                        <>
+                          <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                          <span>Sending...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Send className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                          <span>Send Message</span>
+                        </>
+                      )}
                     </button>
                   </form>
                 )}

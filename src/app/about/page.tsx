@@ -1,8 +1,19 @@
 'use client';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { Shield, Target, Eye, Heart, Users, Award, CheckCircle, Globe, Briefcase, Zap, ChevronDown, ChevronRight, Building, User, Users2, Calculator, FileText, Phone, TrendingUp, Wrench, Zap as ZapIcon, Star } from 'lucide-react';
+import { Shield, Target, Eye, Users, Award, Zap, ChevronDown, ChevronRight, Building, Users2, Calculator, FileText, Phone, TrendingUp, Wrench, Zap as ZapIcon, Star } from 'lucide-react';
 import { useState } from 'react';
+
+interface OrgNode {
+  id: string;
+  title: string;
+  subtitle: string;
+  icon: React.ComponentType<{ className?: string }>;
+  color: string;
+  bgColor: string;
+  borderColor: string;
+  children: OrgNode[];
+}
 
 export default function About() {
   const [expandedNodes, setExpandedNodes] = useState<Set<string>>(new Set(['ceo', 'gm', 'hr', 'accounts', 'payroll', 'sales', 'bdm', 'eng-manager', 'firefighting-tl', 'fire-alarm-tl']));
@@ -186,7 +197,7 @@ export default function About() {
   ];
 
   // Desktop/Laptop Tree Structure
-  const renderDesktopNode = (node: any, level: number = 0) => {
+  const renderDesktopNode = (node: OrgNode, level: number = 0) => {
     const isExpanded = expandedNodes.has(node.id);
     const hasChildren = node.children && node.children.length > 0;
     const IconComponent = node.icon;
@@ -248,7 +259,7 @@ export default function About() {
             
             {/* Children in a row */}
             <div className="flex justify-center space-x-8 lg:space-x-16 xl:space-x-20">
-              {node.children.map((child: any, index: number) => (
+              {node.children.map((child: OrgNode) => (
                 <div key={child.id} className="relative flex-1 max-w-sm">
                   {/* Vertical connection line to child */}
                   <div className="absolute top-0 left-1/2 w-px h-6 bg-gradient-to-b from-gray-300 to-gray-200 transform -translate-x-1/2"></div>
@@ -267,7 +278,7 @@ export default function About() {
   };
 
   // Mobile List Structure
-  const renderMobileNode = (node: any, level: number = 0) => {
+  const renderMobileNode = (node: OrgNode, level: number = 0) => {
     const isExpanded = expandedNodes.has(node.id);
     const hasChildren = node.children && node.children.length > 0;
     const IconComponent = node.icon;
@@ -313,7 +324,7 @@ export default function About() {
         {/* Children Container */}
         {hasChildren && isExpanded && (
           <div className={`ml-4 sm:ml-6 mt-3 space-y-2 border-l-2 border-gray-200 pl-3 sm:pl-4`}>
-            {node.children.map((child: any, index: number) => (
+            {node.children.map((child: OrgNode) => (
               <div key={child.id}>
                 {renderMobileNode(child, level + 1)}
               </div>

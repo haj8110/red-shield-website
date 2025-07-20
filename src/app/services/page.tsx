@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import { Flame, Shield, Zap, Settings, Database, CheckCircle, ArrowRight, Star, Clock, Users, Award, Briefcase, Globe, Droplets, Wrench, Cpu, FileText, Gauge, AlertTriangle, Building, Factory, Car } from 'lucide-react';
+import { Flame, Shield, Zap, CheckCircle, ArrowRight, Star, Clock, Users, Award, Droplets, Cpu, Gauge, Building, Factory } from 'lucide-react';
 import Link from 'next/link';
 
 export default function Services() {
