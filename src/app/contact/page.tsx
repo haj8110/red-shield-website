@@ -13,69 +13,36 @@ export default function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  // Telegram Bot Configuration
-  const TELEGRAM_BOT_TOKEN = process.env.NEXT_PUBLIC_TELEGRAM_BOT_TOKEN || '8014120673:AAF5uixEY7rHNtFAMYMxzBpoxN3salvNPHQ';
-  const TELEGRAM_CHAT_ID = process.env.NEXT_PUBLIC_TELEGRAM_CHAT_ID || '1643051382';
-
-  const sendTelegramMessage = async (formData: any) => {
-    try {
-      const message = `
-🚨 *NEW CONTACT FORM SUBMISSION*
-
-👤 *Name:* ${formData.name}
-📧 *Email:* ${formData.email}
-📱 *Phone:* ${formData.phone || 'Not provided'}
-🏢 *Company:* ${formData.company || 'Not provided'}
-
-💬 *Message:*
-${formData.message}
-
-⏰ *Submitted:* ${new Date().toLocaleString()}
-🌐 *Website:* Red Shield Engineering
-      `;
-
-      const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          chat_id: TELEGRAM_CHAT_ID,
-          text: message,
-          parse_mode: 'Markdown',
-        }),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to send Telegram message');
-      }
-
-      return true;
-    } catch (error) {
-      console.error('Telegram notification error:', error);
-      return false;
-    }
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
 
     try {
-      // Send to Telegram for instant notification
-      const telegramSent = await sendTelegramMessage(form);
+      // PHP endpoint URL
+      const phpEndpoint = process.env.NEXT_PUBLIC_PHP_ENDPOINT || 'https://mediumblue-ape-346354.hostingersite.com/api/contact.php';
       
-      if (telegramSent) {
-        console.log('✅ Telegram notification sent successfully');
-      } else {
-        console.log('⚠️ Telegram notification failed, but form submitted');
-      }
+      const response = await fetch(phpEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form),
+      });
 
-      // Reset form and show success message
-      setForm({ name: '', email: '', phone: '', company: '', message: '' });
-      setSubmitted(true);
+      const result = await response.json();
+
+      if (result.success) {
+        // Reset form and show success message
+        setForm({ name: '', email: '', phone: '', company: '', message: '' });
+        setSubmitted(true);
+        console.log('✅ Form submitted successfully:', result);
+      } else {
+        console.error('❌ Form submission failed:', result.message);
+        alert('Failed to send message. Please try again.');
+      }
     } catch (error) {
-      console.error('Form submission error:', error);
+      console.error('❌ Form submission error:', error);
+      alert('Failed to send message. Please try again.');
     } finally {
       setSending(false);
     }
