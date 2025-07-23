@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import SEOHead from '@/components/SEOHead';
 import { Flame, Shield, Zap, CheckCircle, ArrowRight, Star, Clock, Users, Award, Droplets, Cpu, Gauge, Building, Factory } from 'lucide-react';
 import Link from 'next/link';
 
@@ -126,6 +127,13 @@ export default function Services() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="Fire Protection Engineering Services - Red Shield Engineering"
+        description="Comprehensive fire protection engineering services including fire fighting systems, gas suppression, fire pumps, and low current systems. NFPA certified solutions for commercial and industrial applications."
+        keywords="fire protection services, fire fighting systems, gas suppression, fire pumps, low current systems, NFPA certified, fire safety engineering, sprinkler systems, fire alarm systems"
+        ogType="website"
+        canonicalUrl="https://redshieldengineering.com/services"
+      />
       <Navigation />
       
       {/* Hero Section */}

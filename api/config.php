@@ -7,8 +7,8 @@ define('TELEGRAM_BOT_TOKEN', ' '); // Replace with your actual bot token
 define('TELEGRAM_CHAT_ID', '1643051382');     // Replace with your actual chat ID
 
 // Email Configuration
-define('FROM_EMAIL', 'noreply@reshieldengineering.com');      // Replace with your domain email
-define('TO_EMAIL', 'sales@reshieldengineering.com');  // Replace with your sales email
+define('FROM_EMAIL', 'noreply@redshieldengineering.com');      // Replace with your domain email
+define('TO_EMAIL', 'sales@redshieldengineering.com');  // Replace with your sales email
 
 // Security Settings
 define('ALLOWED_ORIGINS', ['https://yourdomain.com', 'https://www.yourdomain.com']); // Add your domain

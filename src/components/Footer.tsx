@@ -40,7 +40,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-red-500" />
-                <span className="text-gray-300 text-sm">sales@reshieldengineering.com</span>
+                <span className="text-gray-300 text-sm">sales@redshieldengineering.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Shield className="h-5 w-5 text-red-500" />

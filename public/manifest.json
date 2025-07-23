@@ -1,0 +1,23 @@
+{
+  "name": "Red Shield Engineering - Fire Protection Solutions",
+  "short_name": "Red Shield",
+  "description": "Leading fire protection system engineering, estimation, design, and drafting solutions",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#CE2029",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/fire-shield.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "engineering", "safety"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false
+} 

@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import SEOHead from '@/components/SEOHead';
 import { MapPin, Layers, Search, Filter, Award, Clock, Users, Building, ArrowRight, Shield, Flame, Zap, Droplets } from 'lucide-react';
 import Link from 'next/link';
 
@@ -23,7 +24,7 @@ const projectsData = [
     year: '2023'
   },
   { 
-    name: 'A1 Rajhi Bank HQ Tower', 
+    name: 'AL Rajhi Bank HQ Tower', 
     scope: 'Firefighting System', 
     location: 'Riyadh - KSA', 
     systemType: 'Commercial',
@@ -31,7 +32,7 @@ const projectsData = [
     year: '2023'
   },
   { 
-    name: 'A1-FISALIAH Tower', 
+    name: 'AL-FISALIAH Tower', 
     scope: 'Firefighting System', 
     location: 'Riyadh - KSA', 
     systemType: 'Commercial',
@@ -113,7 +114,7 @@ const projectsData = [
   { 
     name: 'Maersk Logistics Project', 
     scope: 'FK-5-1-12 System', 
-    location: 'A1 Qassim - KSA', 
+    location: 'AL Qassim - KSA', 
     systemType: 'Industrial',
     status: 'Completed',
     year: '2023'
@@ -167,7 +168,7 @@ const projectsData = [
     year: '2022'
   },
   { 
-    name: 'A1 Baik- Dubai Mall', 
+    name: 'AL Baik- Dubai Mall', 
     scope: 'Wet Chemical Fire suppression (Kitchen Hood) system', 
     location: 'Dubai - UAE', 
     systemType: 'Commercial',
@@ -183,7 +184,7 @@ const projectsData = [
     year: '2023'
   },
   { 
-    name: 'A1 Rehmaniyah Shopping Mall', 
+    name: 'AL Rehmaniyah Shopping Mall', 
     scope: 'Wet Chemical Fire suppression (Kitchen Hood) system', 
     location: 'Sharjah - UAE', 
     systemType: 'Commercial',
@@ -201,7 +202,7 @@ const projectsData = [
   { 
     name: 'G+R Central Kitchen Facility', 
     scope: 'Firefighting System, Fire Alarm System, Emergency lighting system & Wet Chemical Fire suppression (Kitchen Hood) system', 
-    location: 'A1 Ain — Abu Dhabi UAE', 
+    location: 'AL Ain — Abu Dhabi UAE', 
     systemType: 'Industrial',
     status: 'Completed',
     year: '2023'
@@ -345,6 +346,13 @@ export default function Projects() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="Fire Protection Projects Portfolio - Red Shield Engineering"
+        description="Explore our completed fire protection engineering projects including Riyadh Metro, Jabal Omar Development, AL Rajhi Bank HQ, and other major commercial and industrial installations across GCC."
+        keywords="fire protection projects, completed projects, Riyadh Metro, Jabal Omar, AL Rajhi Bank, fire safety installations, GCC projects, commercial fire protection, industrial fire safety"
+        ogType="website"
+        canonicalUrl="https://redshieldengineering.com/projects"
+      />
       <Navigation />
       
       {/* Hero Section */}

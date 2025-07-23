@@ -1,6 +1,7 @@
 'use client';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import SEOHead from '@/components/SEOHead';
 import { Shield, Target, Eye, Users, Award, Zap, ChevronDown, ChevronRight, Building, Users2, Calculator, FileText, Phone, TrendingUp, Wrench, Zap as ZapIcon, Star } from 'lucide-react';
 import { useState } from 'react';
 
@@ -337,6 +338,13 @@ export default function About() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="About Us - Red Shield Engineering Team & Expertise"
+        description="Learn about Red Shield Engineering's expert team, NFPA certified engineers, and our commitment to fire protection engineering excellence. Discover our organizational structure and industry expertise."
+        keywords="about Red Shield Engineering, fire protection team, NFPA certified engineers, organizational structure, fire safety expertise, engineering company"
+        ogType="website"
+        canonicalUrl="https://redshieldengineering.com/about"
+      />
       <Navigation />
       <section className="pt-16 bg-gradient-to-br from-red-50 to-orange-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">

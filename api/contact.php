@@ -30,6 +30,45 @@ if (!isset($input['name']) || !isset($input['email']) || !isset($input['message'
     exit();
 }
 
+// reCAPTCHA validation is disabled for now
+// Uncomment the code below to enable reCAPTCHA validation
+/*
+// Validate reCAPTCHA
+if (!isset($input['recaptchaToken'])) {
+    http_response_code(400);
+    echo json_encode(['success' => false, 'message' => 'reCAPTCHA verification required']);
+    exit();
+}
+
+// Verify reCAPTCHA
+$recaptchaToken = $input['recaptchaToken'];
+$recaptchaSecret = 'YOUR_RECAPTCHA_SECRET_KEY'; // Replace with your actual secret key
+
+$recaptchaUrl = 'https://www.google.com/recaptcha/api/siteverify';
+$recaptchaData = [
+    'secret' => $recaptchaSecret,
+    'response' => $recaptchaToken
+];
+
+$recaptchaOptions = [
+    'http' => [
+        'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+        'method' => 'POST',
+        'content' => http_build_query($recaptchaData)
+    ]
+];
+
+$recaptchaContext = stream_context_create($recaptchaOptions);
+$recaptchaResponse = file_get_contents($recaptchaUrl, false, $recaptchaContext);
+$recaptchaResult = json_decode($recaptchaResponse, true);
+
+if (!$recaptchaResult['success']) {
+    http_response_code(400);
+    echo json_encode(['success' => false, 'message' => 'reCAPTCHA verification failed']);
+    exit();
+}
+*/
+
 // Sanitize inputs
 $name = htmlspecialchars(trim($input['name']));
 $email = filter_var(trim($input['email']), FILTER_SANITIZE_EMAIL);

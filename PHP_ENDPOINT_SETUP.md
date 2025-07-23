@@ -30,7 +30,7 @@ define('TELEGRAM_CHAT_ID', '1643051382');
 
 // Email Configuration
 define('FROM_EMAIL', 'noreply@yourdomain.com');
-define('TO_EMAIL', 'sales@reshieldengineering.com');
+define('TO_EMAIL', 'sales@redshieldengineering.com');
 
 // Security Settings
 define('ALLOWED_ORIGINS', ['https://yourdomain.com', 'https://www.yourdomain.com']);

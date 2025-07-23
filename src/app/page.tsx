@@ -1,5 +1,6 @@
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import SEOHead from '@/components/SEOHead';
 import { Shield, Flame, Zap, Wrench, ArrowRight, CheckCircle, Play, Star, Users, Award } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -50,6 +51,13 @@ export default function Home() {
 
   return (
     <div className="min-h-screen overflow-x-hidden w-full">
+      <SEOHead 
+        title="Red Shield Engineering - Leading Fire Protection Engineering Solutions"
+        description="Expert fire protection system engineering, estimation, design, and drafting solutions. NFPA certified engineers serving System Integrators, MEP Contractors, and Consultants worldwide."
+        keywords="fire protection engineering, fire safety systems, NFPA certified, fire protection design, estimation services, technical drafting, MEP contractors, system integrators"
+        ogType="website"
+        canonicalUrl="https://redshieldengineering.com"
+      />
       <Navigation />
       
       {/* Enhanced Hero Section */}

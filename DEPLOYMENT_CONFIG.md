@@ -25,8 +25,8 @@ Your PHP endpoint is configured with:
 - **Chat ID**: `1643051382`
 
 ### Email Configuration:
-- **From Email**: `noreply@reshieldengineering.com`
-- **To Email**: `sales@reshieldengineering.com`
+- **From Email**: `noreply@redshieldengineering.com`
+- **To Email**: `sales@redshieldengineering.com`
 - **Email Notifications**: Disabled (commented out)
 
 ## 🧪 Testing

@@ -1,6 +1,8 @@
 'use client';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import ReCaptcha from '@/components/ReCaptcha';
+import SEOHead from '@/components/SEOHead';
 import { MapPin, Phone, Mail, MessageCircle, Send, Clock, Users, Award, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 
@@ -8,13 +10,33 @@ export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', company: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+  const [recaptchaError, setRecaptchaError] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const handleRecaptchaVerify = (token: string | null) => {
+    setRecaptchaToken(token);
+    setRecaptchaError(false);
+  };
+
+  const handleRecaptchaExpired = () => {
+    setRecaptchaToken(null);
+    setRecaptchaError(true);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // reCAPTCHA is disabled for now - uncomment the lines below to enable
+    // if (!recaptchaToken) {
+    //   setRecaptchaError(true);
+    //   alert('Please complete the reCAPTCHA verification.');
+    //   return;
+    // }
+
     setSending(true);
 
     try {
@@ -26,7 +48,10 @@ export default function Contact() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          ...form,
+          recaptchaToken: recaptchaToken || null // reCAPTCHA is disabled for now
+        }),
       });
 
       const result = await response.json();
@@ -34,6 +59,7 @@ export default function Contact() {
       if (result.success) {
         // Reset form and show success message
         setForm({ name: '', email: '', phone: '', company: '', message: '' });
+        setRecaptchaToken(null);
         setSubmitted(true);
         console.log('✅ Form submitted successfully:', result);
       } else {
@@ -51,7 +77,7 @@ export default function Contact() {
   const contactInfo = [
     { icon: MapPin, label: 'Address', value: '12-1-17, Vinayagar Street, Surandai – 627859, Tenkasi District, Tamil Nadu, India.', color: 'text-red-500' },
     { icon: Phone, label: 'Phone', value: '+91 8015019219', color: 'text-green-500' },
-    { icon: Mail, label: 'Email', value: 'sales@reshieldengineering.com', color: 'text-blue-500' },
+    { icon: Mail, label: 'Email', value: 'sales@redshieldengineering.com', color: 'text-blue-500' },
     { icon: Clock, label: 'Website', value: 'www.redshieldengineering.com', color: 'text-purple-500' }
   ];
 
@@ -64,6 +90,13 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="Contact Us - Fire Protection Engineering Services"
+        description="Get in touch with Red Shield Engineering for fire protection engineering consultations, quotes, and technical support. Expert NFPA certified engineers ready to help."
+        keywords="contact fire protection engineering, fire safety consultation, NFPA certified engineers, fire protection quotes, technical support"
+        ogType="website"
+        canonicalUrl="https://redshieldengineering.com/contact"
+      />
       <Navigation />
       
       {/* Hero Section */}
@@ -189,6 +222,22 @@ export default function Contact() {
                       />
                     </div>
                     
+                    {/* reCAPTCHA - Disabled for now */}
+                    {/* Uncomment the div below to enable reCAPTCHA */}
+                    {/*
+                    <div className="space-y-2">
+                      <ReCaptcha 
+                        onVerify={handleRecaptchaVerify}
+                        onExpired={handleRecaptchaExpired}
+                      />
+                      {recaptchaError && (
+                        <p className="text-red-500 text-sm text-center">
+                          Please complete the reCAPTCHA verification.
+                        </p>
+                      )}
+                    </div>
+                    */}
+                    
                     <button 
                       type="submit" 
                       disabled={sending}
@@ -286,7 +335,7 @@ export default function Contact() {
               <span>Call Now</span>
             </a>
             <a 
-              href="mailto:sales@reshieldengineering.com"
+              href="mailto:sales@redshieldengineering.com"
               className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-red-600 transition-all duration-300 backdrop-blur-sm flex items-center justify-center space-x-2 group"
             >
               <Mail className="h-5 w-5 group-hover:scale-110 transition-transform" />
