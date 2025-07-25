@@ -346,7 +346,7 @@ export default function About() {
         canonicalUrl="https://redshieldengineering.com/about"
       />
       <Navigation />
-      <section className="pt-16 bg-gradient-to-br from-red-50 to-orange-50">
+      <section className="pt-24 bg-gradient-to-br from-red-50 to-orange-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center" data-aos="fade-up">
             <h1 className="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FF3C3C] via-[#CE2029] to-[#FF7A3C] mb-6 drop-shadow-lg">About <span className="text-[#CE2029]">Red Shield</span></h1>

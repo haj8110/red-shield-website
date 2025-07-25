@@ -1,7 +1,8 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, Shield } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import Image from 'next/image';
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navItems = [
@@ -14,11 +15,17 @@ const Navigation = () => {
   return (
     <nav className="bg-white shadow-lg fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-24">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-2">
-              <Shield className="h-8 w-8 text-red-600" />
-              <span className="text-xl font-bold text-gray-900">Red Shield</span>
+            <Link href="/" className="flex items-center">
+            <Image
+  src="/red_shield_logo.svg"
+  alt="Red Shield Engineering Logo"
+  width={0}
+  height={0}
+  sizes="100vw"
+  className="w-50 sm:w-50 md:w-50 lg:w-50 h-auto max-h-22"
+/>
             </Link>
           </div>
           <div className="hidden md:block">

@@ -14,7 +14,7 @@ export default function SEOHead({
   title = "Red Shield Engineering - Fire Protection Engineering Solutions",
   description = "Leading fire protection system engineering, estimation, design, and drafting solutions for System Integrators, MEP Contractors, and Consultants across GCC and international markets.",
   keywords = "fire protection engineering, fire protection system design, estimation, technical drafting, NFPA certified, System Integrators, MEP Contractors, Red Shield Engineering",
-  ogImage = "/fire-shield.svg",
+  ogImage = "/red_shield_logo.svg",
   ogType = "website",
   canonicalUrl,
   structuredData
@@ -28,7 +28,7 @@ export default function SEOHead({
     "@type": "Organization",
     "name": "Red Shield Engineering",
     "url": "https://redshieldengineering.com",
-    "logo": "https://redshieldengineering.com/fire-shield.svg",
+    "logo": "https://redshieldengineering.com/red_shield_logo.svg",
     "description": "Leading fire protection system engineering, estimation, design, and drafting solutions",
     "address": {
       "@type": "PostalAddress",

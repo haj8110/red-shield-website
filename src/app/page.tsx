@@ -61,7 +61,7 @@ export default function Home() {
       <Navigation />
       
       {/* Enhanced Hero Section */}
-      <section className="relative w-full min-h-[calc(100vh-4rem)] sm:min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 lg:pt-24">
+      <section className="relative w-full min-h-[calc(100vh-4rem)] sm:min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-28 lg:pt-32">
         {/* Mixed Background - Combining All Elements */}
         <div className="absolute inset-0 bg-gradient-to-br from-red-50 via-orange-50 to-red-100">
           

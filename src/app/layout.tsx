@@ -23,28 +23,28 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  openGraph: {
-    title: "Red Shield Engineering - Fire Protection Engineering Solutions",
-    description: "Leading fire protection system engineering, estimation, design, and drafting solutions for System Integrators, MEP Contractors, and Consultants",
-    type: "website",
-    locale: "en_US",
-    url: "https://redshieldengineering.com",
-    siteName: "Red Shield Engineering",
-    images: [
-      {
-        url: "/fire-shield.svg",
-        width: 1200,
-        height: 630,
-        alt: "Red Shield Engineering - Fire Protection Solutions",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Red Shield Engineering - Fire Protection Engineering Solutions",
-    description: "Leading fire protection system engineering, estimation, design, and drafting solutions for System Integrators, MEP Contractors, and Consultants",
-    images: ["/fire-shield.svg"],
-  },
+      openGraph: {
+      title: "Red Shield Engineering - Fire Protection Engineering Solutions",
+      description: "Leading fire protection system engineering, estimation, design, and drafting solutions for System Integrators, MEP Contractors, and Consultants",
+      type: "website",
+      locale: "en_US",
+      url: "https://redshieldengineering.com",
+      siteName: "Red Shield Engineering",
+      images: [
+        {
+          url: "/red_shield_logo.svg",
+          width: 1200,
+          height: 630,
+          alt: "Red Shield Engineering - Fire Protection Solutions",
+        },
+      ],
+    },
+      twitter: {
+      card: "summary_large_image",
+      title: "Red Shield Engineering - Fire Protection Engineering Solutions",
+      description: "Leading fire protection system engineering, estimation, design, and drafting solutions for System Integrators, MEP Contractors, and Consultants",
+      images: ["/red_shield_logo.svg"],
+    },
   alternates: {
     canonical: "https://redshieldengineering.com",
   },
@@ -61,12 +61,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" href="/red_shield_logo.svg" type="image/svg+xml" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#CE2029" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Red Shield Engineering" />
-        <link rel="apple-touch-icon" href="/fire-shield.svg" />
+        <link rel="apple-touch-icon" href="/red_shield_logo.svg" />
       </head>
       <body className={inter.className}>
         <AOSProvider>

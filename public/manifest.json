@@ -9,7 +9,7 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/fire-shield.svg",
+      "src": "/red_shield_logo.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"

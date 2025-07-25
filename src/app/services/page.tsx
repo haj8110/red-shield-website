@@ -137,7 +137,7 @@ export default function Services() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-16 bg-gradient-to-br from-red-50 via-orange-50 to-yellow-50">
+      <section className="pt-24 bg-gradient-to-br from-red-50 via-orange-50 to-yellow-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center animate-fade-in" data-aos="fade-up">
             <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-r from-red-500 to-orange-500 rounded-full mb-6 shadow-lg">
