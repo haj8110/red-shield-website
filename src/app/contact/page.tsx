@@ -166,7 +166,7 @@ export default function Contact() {
                           value={form.name} 
                           onChange={handleChange} 
                           required 
-                          className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent bg-white/80 backdrop-blur-sm transition-all duration-200" 
+                          className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent bg-white/80 backdrop-blur-sm transition-all duration-200 text-gray-900 placeholder-gray-500" 
                         />
                       </div>
                       <div>
@@ -178,7 +178,7 @@ export default function Contact() {
                           value={form.email} 
                           onChange={handleChange} 
                           required 
-                          className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent bg-white/80 backdrop-blur-sm transition-all duration-200" 
+                          className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent bg-white/80 backdrop-blur-sm transition-all duration-200 text-gray-900 placeholder-gray-500" 
                         />
                       </div>
                     </div>
@@ -192,7 +192,7 @@ export default function Contact() {
                           name="phone" 
                           value={form.phone} 
                           onChange={handleChange} 
-                          className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent bg-white/80 backdrop-blur-sm transition-all duration-200" 
+                          className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent bg-white/80 backdrop-blur-sm transition-all duration-200 text-gray-900 placeholder-gray-500" 
                         />
                       </div>
                       <div>
@@ -203,7 +203,7 @@ export default function Contact() {
                           name="company" 
                           value={form.company} 
                           onChange={handleChange} 
-                          className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent bg-white/80 backdrop-blur-sm transition-all duration-200" 
+                          className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent bg-white/80 backdrop-blur-sm transition-all duration-200 text-gray-900 placeholder-gray-500" 
                         />
                       </div>
                     </div>
@@ -217,7 +217,7 @@ export default function Contact() {
                         onChange={handleChange} 
                         required 
                         rows={5} 
-                        className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent bg-white/80 backdrop-blur-sm transition-all duration-200 resize-none" 
+                        className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent bg-white/80 backdrop-blur-sm transition-all duration-200 resize-none text-gray-900 placeholder-gray-500" 
                         placeholder="Tell us about your fire protection engineering needs..."
                       />
                     </div>
