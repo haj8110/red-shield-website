@@ -30,12 +30,12 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // reCAPTCHA is disabled for now - uncomment the lines below to enable
-    // if (!recaptchaToken) {
-    //   setRecaptchaError(true);
-    //   alert('Please complete the reCAPTCHA verification.');
-    //   return;
-    // }
+    // reCAPTCHA validation
+    if (!recaptchaToken) {
+      setRecaptchaError(true);
+      alert('Please complete the reCAPTCHA verification.');
+      return;
+    }
 
     setSending(true);
 
@@ -50,7 +50,7 @@ export default function Contact() {
         },
         body: JSON.stringify({
           ...form,
-          recaptchaToken: recaptchaToken || null // reCAPTCHA is disabled for now
+          recaptchaToken: recaptchaToken
         }),
       });
 
@@ -222,9 +222,7 @@ export default function Contact() {
                       />
                     </div>
                     
-                    {/* reCAPTCHA - Disabled for now */}
-                    {/* Uncomment the div below to enable reCAPTCHA */}
-                    {/*
+                    {/* reCAPTCHA */}
                     <div className="space-y-2">
                       <ReCaptcha 
                         onVerify={handleRecaptchaVerify}
@@ -236,7 +234,6 @@ export default function Contact() {
                         </p>
                       )}
                     </div>
-                    */}
                     
                     <button 
                       type="submit" 

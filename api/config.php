@@ -10,6 +10,9 @@ define('TELEGRAM_CHAT_ID', '1643051382');     // Replace with your actual chat I
 define('FROM_EMAIL', 'noreply@redshieldengineering.com');      // Replace with your domain email
 define('TO_EMAIL', 'sales@redshieldengineering.com');  // Replace with your sales email
 
+// reCAPTCHA Configuration
+define('RECAPTCHA_SECRET_KEY', 'YOUR_RECAPTCHA_SECRET_KEY'); // Replace with your actual secret key
+
 // Security Settings
 define('ALLOWED_ORIGINS', ['https://yourdomain.com', 'https://www.yourdomain.com']); // Add your domain
 define('MAX_MESSAGE_LENGTH', 1000); // Maximum message length

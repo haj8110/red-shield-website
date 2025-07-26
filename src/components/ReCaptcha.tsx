@@ -22,7 +22,7 @@ export default function ReCaptcha({ onVerify, onExpired }: ReCaptchaProps) {
     <div className="flex justify-center">
       <ReCAPTCHA
         ref={recaptchaRef}
-        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6LcXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'}
+        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6Lc7v48rAAAAAJBD3eU_zF2oPR5m0rUT57yKjsIx'}
         onChange={handleVerify}
         onExpired={handleExpired}
         theme="light"

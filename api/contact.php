@@ -30,9 +30,6 @@ if (!isset($input['name']) || !isset($input['email']) || !isset($input['message'
     exit();
 }
 
-// reCAPTCHA validation is disabled for now
-// Uncomment the code below to enable reCAPTCHA validation
-/*
 // Validate reCAPTCHA
 if (!isset($input['recaptchaToken'])) {
     http_response_code(400);
@@ -42,7 +39,7 @@ if (!isset($input['recaptchaToken'])) {
 
 // Verify reCAPTCHA
 $recaptchaToken = $input['recaptchaToken'];
-$recaptchaSecret = 'YOUR_RECAPTCHA_SECRET_KEY'; // Replace with your actual secret key
+$recaptchaSecret = RECAPTCHA_SECRET_KEY;
 
 $recaptchaUrl = 'https://www.google.com/recaptcha/api/siteverify';
 $recaptchaData = [
@@ -67,7 +64,6 @@ if (!$recaptchaResult['success']) {
     echo json_encode(['success' => false, 'message' => 'reCAPTCHA verification failed']);
     exit();
 }
-*/
 
 // Sanitize inputs
 $name = htmlspecialchars(trim($input['name']));
