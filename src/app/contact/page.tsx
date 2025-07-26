@@ -41,7 +41,7 @@ export default function Contact() {
 
     try {
       // PHP endpoint URL
-      const phpEndpoint = process.env.NEXT_PUBLIC_PHP_ENDPOINT || 'https://mediumblue-ape-346354.hostingersite.com/api/contact.php';
+      const phpEndpoint = process.env.NEXT_PUBLIC_PHP_ENDPOINT || 'http://65.0.122.123/red_shield/api/contact.php';
       
       const response = await fetch(phpEndpoint, {
         method: 'POST',
