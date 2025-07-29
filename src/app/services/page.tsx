@@ -82,7 +82,8 @@ export default function Services() {
           'Fire Rated Cable',
           'Gas Detection System',
           'Battery Operated Detector',
-          'Voice Evacuation System'
+          'Voice Evacuation System',
+          'Life and Safety System'
         ],
         applications: ['Office buildings', 'Healthcare facilities', 'Educational institutions', 'Hotels']
       },
