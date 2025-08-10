@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "redshieldengineering.com",
+  "Id": "b9016561-0459-4fcd-9b90-da711e17099f"
+}
